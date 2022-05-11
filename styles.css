@@ -1,0 +1,101 @@
+*,*::after,*::before
+{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    user-select: none;
+}
+
+body
+{
+    background: linear-gradient(to right, rgb(82, 101, 105), rgb(216, 233, 236),rgb(82, 101, 105) );
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock
+{
+    width:600px;
+    height:600px;
+    background-color: rgba(223, 248, 250, 0.979);
+    border-radius: 50%;
+    border: 4px solid black;
+    position: relative;
+}
+
+.clock .number
+{   
+    --rotation:0;
+    position: absolute;
+    height:100%;
+    width: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.clock .number1{ --rotation : 30deg; }
+.clock .number2{ --rotation : 60deg; }
+.clock .number3{ --rotation : 90deg; }
+.clock .number4{ --rotation : 120deg; }
+.clock .number5{ --rotation : 150deg; }
+.clock .number6{ --rotation : 180deg; }
+.clock .number7{ --rotation : 210deg; }
+.clock .number8{ --rotation : 240deg; }
+.clock .number9{ --rotation : 270deg; }
+.clock .number10{ --rotation : 300deg; }
+.clock .number11{ --rotation : 330deg; }
+.clock .number12{ --rotation : 360deg; }
+
+.clock .hand
+{   
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    border-radius: 10px;
+    border: 1px solid rgba(51, 49, 49, 0.897);
+    z-index: 100;
+}
+
+.clock .hand.second
+{
+    width: 4px;
+    height:45%;
+    background-color: hsl(0, 96%, 55%);
+}
+
+.clock .hand.minute
+{
+    width: 12px;
+    height:40%;
+    background-color: hsl(184, 73%, 71%);
+}
+
+.clock .hand.hour
+{
+    width: 20px;
+    height:30%;
+    background-color: hsl(184, 73%, 71%);
+}
+
+.clock::after
+{
+    content:"";
+    position: absolute;
+    background-color: black;
+    z-index: 111;
+    width:26px;
+    height:26px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+
